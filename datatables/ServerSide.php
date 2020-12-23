@@ -28,7 +28,7 @@ trait ServerSide
         $response = $response->toArray();
 
         $response['recordsTotal'] = $response['total'];
-        $response['recordsFiltered'] = $response['to'];
+        $response['recordsFiltered'] = $response['total'];
 
         return $response;
     }
