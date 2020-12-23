@@ -23,6 +23,13 @@ trait ServerSide
             $queryBuilder->orderBy($columns[$order["column"]]["data"], $order["dir"]);
         }
 
-        return $queryBuilder->paginate($request->length);
+        $response = $queryBuilder->paginate($request->length);
+
+        $response = $response->toArray();
+
+        $response['recordsTotal'] = $response['total'];
+        $response['recordsFiltered'] = $response['to'];
+
+        return $response;
     }
 }
