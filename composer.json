@@ -12,7 +12,9 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "\\Lz\\Laravel\\Datatables\\":"datatables"
+            "Lz\\Laravel\\Datatables\\":"datatables/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
