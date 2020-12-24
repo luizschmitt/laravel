@@ -12,7 +12,7 @@ trait ServerSide
             $columns = $request->input('columns');
             $orders   = $request->input('order');
 
-            $page = (($request->start && $request->length)) ? ($request->start / $request->length) : 1;
+            $page =  ($request->start / $request->length);
             $current_page = ($page == 0) ? 1 : $page + 1;
             $request->merge(['page' => $current_page]);
             $perPage = ($request->length) ? $request->length : 10;
